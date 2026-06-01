@@ -1,5 +1,13 @@
 # ZhiTu Career · 知途
 
+<!-- Badges -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.4-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.4-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://vercel.com)
+[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue)](https://pages.github.com/)
+
 > AI-Powered Career Exploration Platform - Lighting the Way for College Students' Career Paths
 
 Discover yourself through scientific assessments, understand job positions through intelligent JD analysis, and find your gaps through precise matching - transform the job search process into an engaging star map exploration journey.
@@ -10,7 +18,7 @@ Discover yourself through scientific assessments, understand job positions throu
 
 ## ✨ Features
 
-### 🧭 Career Star Map Assessment
+### 🧭 Career Star Map Assessment (✅ Completed)
 - **Holland RIASEC** Career Interest Assessment (24 scenario-based questions)
 - **MBTI** Personality Type Simplified Assessment (8 scenario-based questions)
 - **Career Values** Assessment (5 scenario-based questions)
@@ -18,17 +26,17 @@ Discover yourself through scientific assessments, understand job positions throu
 - SBTI Gamified 5-Stage Journey System with unlockable exploration badges
 - Visual assessment results: Radar charts + career direction recommendations
 
-### 🔍 Intelligent JD Decoder
+### 🔍 Intelligent JD Decoder (✅ Completed)
 - AI-powered job description analysis (supports Volcano Ark API)
 - Keyword matching fallback (works without API)
 - Output: Plain language summary, hard/soft skills breakdown, career path, hidden requirements, new grad friendliness
 
-### 📊 Match Analysis
+### 📊 Match Analysis (🚧 In Development)
 - Cross-matching between assessment results and JD analysis
 - Visual gap representation
 
-### 📄 Resume Optimization
-- AI-assisted resume optimization (in development)
+### 📄 Resume Optimization (🚧 In Development)
+- AI-assisted resume optimization
 
 ---
 
@@ -95,8 +103,8 @@ src/
 │   │   ├── page.tsx        # Assessment flow
 │   │   └── result/page.tsx # Assessment results
 │   ├── jd-decoder/page.tsx # JD decoder
-│   ├── match/page.tsx      # Match analysis
-│   ├── resume/page.tsx     # Resume optimization
+│   ├── match/page.tsx      # Match analysis (in development)
+│   ├── resume/page.tsx     # Resume optimization (in development)
 │   └── profile/page.tsx    # User profile
 ├── components/             # Components
 │   ├── layout/             # Layout components (Navbar, MobileTabBar)
@@ -115,6 +123,32 @@ src/
 
 ---
 
+## 🗺️ Roadmap
+
+### Phase 1 - MVP (Current)
+- [x] Career Star Map Assessment
+- [x] Intelligent JD Decoder
+- [ ] Match Analysis
+- [ ] Resume Optimization
+
+### Phase 2 - Enhanced Features
+- [ ] AI-powered career counseling chatbot
+- [ ] Multi-language support (English/Chinese)
+- [ ] User accounts and history persistence
+- [ ] Export assessment reports (PDF)
+
+### Phase 3 - Community & Scale
+- [ ] Public API for developers
+- [ ] Plugin system for custom assessments
+- [ ] Integration with job platforms
+
+### Future - LeaveLesson Project
+- [ ] Companion education platform for rural volunteer teaching
+- [ ] Knowledge base that persists beyond teacher turnover
+- [ ] AI tutoring for continued learning
+
+---
+
 ## 🌐 Live Demo
 
 **https://2017java.github.io/zhitu-career/**
@@ -123,55 +157,7 @@ src/
 
 ## 📄 License
 
-This project is licensed under a dual-license model:
-
-### MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-### Apache License 2.0
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-### License Comparison
-
-| Feature | MIT License | Apache 2.0 |
-|---------|-------------|------------|
-| **Permissiveness** | Very permissive | Permissive with patent protection |
-| **Attribution** | Must include copyright notice | Must include copyright notice and NOTICE file |
-| **Patent Rights** | Silent on patents | Explicit patent grant from contributors |
-| **Trademark** | Silent | Explicitly prohibits trademark use without permission |
-| **Modification Tracking** | Not required | Must state changes made to files |
-| **Liability** | No warranty, no liability | No warranty, no liability |
-| **Best For** | Simple projects, maximum freedom | Enterprise use, patent-sensitive projects |
-
-**Why dual-license?** We offer both licenses to give users maximum flexibility. You may choose to use this project under either the MIT License or the Apache License 2.0, whichever better suits your needs.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
