@@ -1,71 +1,79 @@
-# 知途 · ZhiTu Career
+# ZhiTu Career · 知途
 
-> AI 驱动的职业探索平台，为大学生点亮职业方向的灯
+> AI-Powered Career Exploration Platform - Lighting the Way for College Students' Career Paths
 
-通过科学测评认清自我，通过 JD 智能解读读懂岗位，通过精准匹配找到差距——将求职过程变成一场有趣的星图探索之旅。
+Discover yourself through scientific assessments, understand job positions through intelligent JD analysis, and find your gaps through precise matching - transform the job search process into an engaging star map exploration journey.
 
-## ✨ 功能特性
+[中文文档](README.zh-CN.md) | English
 
-### 🧭 职业星图测评
-- **Holland RIASEC** 职业兴趣测评（24道场景题）
-- **MBTI** 性格类型简化测评（8道场景题）
-- **职业价值观**测评（5道场景题）
-- **软技能**自评（6道场景题）
-- SBTI 游戏化 5 阶段旅程系统，解锁探索徽章
-- 测评结果可视化：雷达图 + 职业方向推荐
+---
 
-### 🔍 JD 智能解读
-- AI 驱动的岗位分析（支持火山方舟 API）
-- 关键词匹配降级兜底（无需 API 也可使用）
-- 输出：白话概括、硬/软技能拆解、职业路径、隐性要求、应届友好度
+## ✨ Features
 
-### 📊 匹配分析
-- 测评结果与 JD 解读结果交叉匹配
-- 差距可视化展示
+### 🧭 Career Star Map Assessment
+- **Holland RIASEC** Career Interest Assessment (24 scenario-based questions)
+- **MBTI** Personality Type Simplified Assessment (8 scenario-based questions)
+- **Career Values** Assessment (5 scenario-based questions)
+- **Soft Skills** Self-Assessment (6 scenario-based questions)
+- SBTI Gamified 5-Stage Journey System with unlockable exploration badges
+- Visual assessment results: Radar charts + career direction recommendations
 
-### 📄 简历优化
-- AI 辅助简历优化（开发中）
+### 🔍 Intelligent JD Decoder
+- AI-powered job description analysis (supports Volcano Ark API)
+- Keyword matching fallback (works without API)
+- Output: Plain language summary, hard/soft skills breakdown, career path, hidden requirements, new grad friendliness
 
-## 🛠️ 技术栈
+### 📊 Match Analysis
+- Cross-matching between assessment results and JD analysis
+- Visual gap representation
 
-| 技术 | 版本 | 说明 |
-|------|------|------|
-| Next.js | 16.2.4 | React 全栈框架（App Router） |
-| React | 19.2.4 | UI 库 |
-| TypeScript | 5.x | 类型安全 |
-| Tailwind CSS | 4.x | 原子化 CSS |
-| shadcn/ui | v4 | 组件库 |
+### 📄 Resume Optimization
+- AI-assisted resume optimization (in development)
 
-## 🚀 快速开始
+---
 
-### 环境要求
+## 🛠️ Tech Stack
+
+| Technology | Version | Description |
+|------------|---------|-------------|
+| Next.js | 16.2.4 | React full-stack framework (App Router) |
+| React | 19.2.4 | UI library |
+| TypeScript | 5.x | Type safety |
+| Tailwind CSS | 4.x | Atomic CSS |
+| shadcn/ui | v4 | Component library |
+
+---
+
+## 🚀 Quick Start
+
+### Requirements
 - Node.js >= 18
 - npm >= 9
 
-### 安装与运行
+### Installation & Running
 
 ```bash
-# 克隆仓库
+# Clone the repository
 git clone https://github.com/2017java/zhitu-career.git
 cd zhitu-career
 
-# 安装依赖
+# Install dependencies
 npm install
 
-# 构建（必须用 build，不要用 dev）
+# Build (must use build, not dev)
 npm run build
 
-# 启动生产服务器
+# Start production server
 npm run start
 ```
 
-打开 http://localhost:3000 即可访问。
+Visit http://localhost:3000 to access the application.
 
-> ⚠️ **重要**：请使用 `npm run build && npm run start` 运行，不要使用 `npm run dev`。Next.js 16.2.x 的 dev 模式存在已知的 WebSocket hydration bug，会导致页面交互失效。
+> ⚠️ **Important**: Please use `npm run build && npm run start` to run, do NOT use `npm run dev`. Next.js 16.2.x dev mode has a known WebSocket hydration bug that will cause page interactions to fail.
 
-### AI 功能配置（可选）
+### AI Features Configuration (Optional)
 
-如需启用 AI 驱动的 JD 解读，创建 `.env.local` 文件：
+To enable AI-powered JD analysis, create a `.env.local` file:
 
 ```env
 ARK_API_KEY=your_api_key_here
@@ -73,44 +81,118 @@ ARK_BASE_URL=https://ark.cn-beijing.volces.com/api/coding/v3
 ARK_MODEL=doubao-pro-128k
 ```
 
-不配置时，JD 解读会自动降级为关键词匹配模式。
-
-## 📁 项目结构
-
-```
-src/
-├── app/                    # Next.js App Router 页面
-│   ├── page.tsx            # 首页
-│   ├── assessment/         # 职业测评
-│   │   ├── page.tsx        # 测评流程
-│   │   └── result/page.tsx # 测评结果
-│   ├── jd-decoder/page.tsx # JD 解读
-│   ├── match/page.tsx      # 匹配分析
-│   ├── resume/page.tsx     # 简历优化
-│   └── profile/page.tsx    # 个人中心
-├── components/             # 组件
-│   ├── layout/             # 布局组件（Navbar、MobileTabBar）
-│   ├── common/             # 通用组件（JourneyProgress、LoadingSpinner）
-│   └── ui/                 # UI 基础组件
-├── hooks/                  # 自定义 Hooks
-│   ├── useAssessment.ts    # 测评状态管理
-│   ├── useJDDecoder.ts     # JD 解读状态管理
-│   └── useJourney.ts       # SBTI 旅程进度
-└── lib/                    # 工具库
-    ├── assessment/         # 测评算法（Holland、MBTI、价值观、软技能）
-    ├── jd-decoder/         # JD 解读引擎（AI + 关键词 + 模板）
-    ├── ai/                 # AI 客户端与提示词
-    └── storage.ts          # localStorage 封装
-```
-
-## 🌐 在线访问
-
-**https://2017java.github.io/zhitu-career/**
-
-## ⚖️ 许可声明
-
-本项目仅供个人学习和测试使用，**未开源**。未经授权，请勿用于商业用途或二次分发。
+When not configured, JD analysis will automatically fall back to keyword matching mode.
 
 ---
 
-> 本项目使用 Claude Code 辅助开发。如需在 Claude Code / Cursor 等 AI 编码工具中继续开发本项目，可在项目根目录创建 `CLAUDE.md` 文件，添加项目上下文说明即可。
+## 📁 Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx            # Home page
+│   ├── assessment/         # Career assessment
+│   │   ├── page.tsx        # Assessment flow
+│   │   └── result/page.tsx # Assessment results
+│   ├── jd-decoder/page.tsx # JD decoder
+│   ├── match/page.tsx      # Match analysis
+│   ├── resume/page.tsx     # Resume optimization
+│   └── profile/page.tsx    # User profile
+├── components/             # Components
+│   ├── layout/             # Layout components (Navbar, MobileTabBar)
+│   ├── common/             # Common components (JourneyProgress, LoadingSpinner)
+│   └── ui/                 # UI base components
+├── hooks/                  # Custom Hooks
+│   ├── useAssessment.ts    # Assessment state management
+│   ├── useJDDecoder.ts     # JD decoder state management
+│   └── useJourney.ts       # SBTI journey progress
+└── lib/                    # Utilities
+    ├── assessment/         # Assessment algorithms (Holland, MBTI, Values, Soft Skills)
+    ├── jd-decoder/         # JD decoder engine (AI + Keywords + Templates)
+    ├── ai/                 # AI client and prompts
+    └── storage.ts          # localStorage wrapper
+```
+
+---
+
+## 🌐 Live Demo
+
+**https://2017java.github.io/zhitu-career/**
+
+---
+
+## 📄 License
+
+This project is licensed under a dual-license model:
+
+### MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+### Apache License 2.0
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+### License Comparison
+
+| Feature | MIT License | Apache 2.0 |
+|---------|-------------|------------|
+| **Permissiveness** | Very permissive | Permissive with patent protection |
+| **Attribution** | Must include copyright notice | Must include copyright notice and NOTICE file |
+| **Patent Rights** | Silent on patents | Explicit patent grant from contributors |
+| **Trademark** | Silent | Explicitly prohibits trademark use without permission |
+| **Modification Tracking** | Not required | Must state changes made to files |
+| **Liability** | No warranty, no liability | No warranty, no liability |
+| **Best For** | Simple projects, maximum freedom | Enterprise use, patent-sensitive projects |
+
+**Why dual-license?** We offer both licenses to give users maximum flexibility. You may choose to use this project under either the MIT License or the Apache License 2.0, whichever better suits your needs.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 🙏 Acknowledgments
+
+- This project was developed with assistance from Claude Code
+- Assessment algorithms based on established psychological frameworks (Holland Codes, MBTI)
+- UI components powered by [shadcn/ui](https://ui.shadcn.com/)
+
+---
+
+> 💡 **Note**: If you want to continue developing this project in AI coding tools like Claude Code or Cursor, you can create a `CLAUDE.md` file in the project root with project context instructions.
